@@ -80,14 +80,14 @@ namespace StarChart.Controllers
             var targetObject = _context.CelestialObjects.Find(id);
             if (targetObject == null)
                 return NotFound();
-                targetObject.Name = celestialObject.Name;
-                targetObject.OrbitalPeriod = celestialObject.OrbitalPeriod;
-                targetObject.OrbitedObjectId = celestialObject.OrbitedObjectId;
+            targetObject.Name = celestialObject.Name;
+            targetObject.OrbitalPeriod = celestialObject.OrbitalPeriod;
+            targetObject.OrbitedObjectId = celestialObject.OrbitedObjectId;
 
-                _context.CelestialObjects.Update(targetObject);
-                _context.SaveChanges();
+            _context.CelestialObjects.Update(targetObject);
+            _context.SaveChanges();
 
-                return NoContent();
+            return NoContent();
         }
 
         [HttpPatch("{id}/{name}")]
